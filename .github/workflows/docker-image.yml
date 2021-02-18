@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Build the Docker image
+    - name: run pacman -Syu --noconfirm
       run: docker run archlinux:base pacman -Syu --noconfirm
