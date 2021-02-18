@@ -15,4 +15,3 @@ jobs:
     steps:
     - name: Build the Docker image
       run: docker run archlinux:base pacman -Syu --noconfirm
-
