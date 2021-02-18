@@ -8,9 +8,25 @@ on:
 
 jobs:
 
+  run-unprivileged:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: run pacman -Syu --noconfirm
+      run: docker run archlinux:base pacman -Syu --noconfirm
+
+  run-privileged:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: run pacman -Syu --noconfirm
+      run: sudo docker run --privileged archlinux:base pacman -Syu --noconfirm
+
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
     - name: run pacman -Syu --noconfirm
